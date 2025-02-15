@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:ukk_2025/loginpage.dart';
+import 'loginpage.dart';
+import 'berandapage.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await dotenv.load();
   await Supabase.initialize(
-    url: dotenv.env['SUPABASE_URL']!,
-    anonKey: dotenv.env['SUPABASE_ANON_KEY']!,
+    url: 'https://sexaxgznypcqkraqmjwg.supabase.co',
+    anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNleGF4Z3pueXBjcWtyYXFtandnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzk0MTU0MzUsImV4cCI6MjA1NDk5MTQzNX0.VNQKrwFZkobJar9QKvgQ7UVUUs_sqK3ZoYICb7r8VuA',
+
   );
   runApp(const MyApp());
 }
@@ -22,7 +21,7 @@ class MyApp extends StatelessWidget {
       title: 'Login Supabase',
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
-        useMaterial3: true,
+        
       ),
       home: const LoginPage(
 

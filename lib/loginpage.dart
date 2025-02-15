@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:ukk_2025/berandapage.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -12,10 +13,10 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   String _errorMessage = '';
-
   Future<void> _login() async {
     final email = _emailController.text;
     final password = _passwordController.text;
+    
 
     try {
       final response = await Supabase.instance.client.auth.signInWithPassword(
@@ -25,7 +26,7 @@ class _LoginPageState extends State<LoginPage> {
       if (response.user != null) {
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => const LoginPage()),
+          MaterialPageRoute(builder: (context) => const MyWidget ()), 
         );
       } else {
         setState(() {
